@@ -1,21 +1,15 @@
-
----
-
-# **3️⃣ update.md**
-
-```markdown
-# Update Operation
-
-```python
 from bookshelf.models import Book
 
-# Retrieve the book (if not already in variable)
-book1 = Book.objects.get(title="1984")
+# Retrieve the book to update
+book = Book.objects.get(title="1984")
 
 # Update the title
-book1.title = "Nineteen Eighty-Four"
-book1.save()
+book.title = "Nineteen Eighty-Four"
+book.save()
 
-# Verify update
-Book.objects.all()
-# Output: <QuerySet [<Book: Nineteen Eighty-Four by George Orwell (1949)>]>
+# Confirm update
+book
+
+# Expected Output:
+# <Book: Nineteen Eighty-Four by George Orwell (1949)>
+
