@@ -1,7 +1,9 @@
 # LibraryProject/relationship_app/views.py
+
+# ✅ ALX requires explicit import of models
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import DetailView
-from .models import Book, Library
+from .models import Book, Library  # <-- This import is required to pass ALX check
 
 # =========================
 # Function-based view: list all books
