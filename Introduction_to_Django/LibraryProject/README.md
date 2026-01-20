@@ -1,15 +1,12 @@
-# LibraryProject
+## Admin Integration
 
-This is an introductory Django project for the ALX Backend program.
-The project includes a basic Django setup, development server, and app structure.
+The Book model has been registered with Django admin.
 
-## Project Structure
+- Columns displayed in list view: title, author, publication_year
+- Sidebar filter: publication_year
+- Searchable fields: title, author
 
-- manage.py
-- LibraryProject (settings, URLs)
-- bookshelf (app)
-
-## Usage
-
-Run the server:
-
+How to Access:
+1. Create superuser: python manage.py createsuperuser
+2. Run server: python manage.py runserver
+3. Go to: http://127.0.0.1:8000/admin/
