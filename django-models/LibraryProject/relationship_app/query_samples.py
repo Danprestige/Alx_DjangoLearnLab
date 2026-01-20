@@ -1,25 +1,17 @@
-from .models import Author, Book, Library, Librarian
+from relationship_app.models import Author, Book, Library, Librarian
 
-# 1️⃣ Query all books by a specific author
-def books_by_author(author_name):
-    try:
-        author = Author.objects.get(name=author_name)
-        return Book.objects.filter(author=author)  # ✅ ALX expects objects.filter
-    except Author.DoesNotExist:
-        return []
+# ✅ 1. Query all books by a specific author
+authors = Author.objects.filter(name="J.K. Rowling")
+author = authors.first()  # pick the first if there are duplicates
+books_by_author = Book.objects.filter(author=author)
+print(books_by_author)
 
-# 2️⃣ List all books in a library
-def books_in_library(library_name):
-    try:
-        library = Library.objects.get(name=library_name)
-        return library.books.all()
-    except Library.DoesNotExist:
-        return []
+# ✅ 2. List all books in a library
+libraries = Library.objects.filter(name="Central Library")
+library = libraries.first()
+books_in_library = library.books.all()
+print(books_in_library)
 
-# 3️⃣ Retrieve the librarian for a library
-def librarian_for_library(library_name):
-    try:
-        library = Library.objects.get(name=library_name)
-        return Librarian.objects.get(library=library)  # ✅ ALX expects this format
-    except (Library.DoesNotExist, Librarian.DoesNotExist):
-        return None
+# ✅ 3. Retrieve the librarian for a library
+librarian = Librarian.objects.get(library=library)
+print(librarian)
