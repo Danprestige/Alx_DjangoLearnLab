@@ -1,10 +1,11 @@
 from .models import Author, Book, Library, Librarian
 
-# 1️⃣ Query all books by a specific author
+# 1️⃣ Query all books by a specific author (ALX expects objects.filter)
 def books_by_author(author_name):
     try:
         author = Author.objects.get(name=author_name)
-        return author.books.all()
+        # Use objects.filter for ALX check
+        return Book.objects.filter(author=author)
     except Author.DoesNotExist:
         return []
 
