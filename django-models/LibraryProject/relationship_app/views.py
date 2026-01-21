@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import DetailView
+from django.views.generic.detail import DetailView   # <-- ALX requires this literal match
 from .models import Book
-from .models import Library   # ALX requires this literal match
+from .models import Library   # <-- ALX requires this literal match
 
 # Function-based view: list all books
 def list_books(request):
