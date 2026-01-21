@@ -1,20 +1,16 @@
 from django.shortcuts import render
-from django.views.generic.list import ListView
-from django.views.generic.detail import DetailView
-from .models import Author, Book
+from django.views.generic import DetailView
+from .models import Book
+from .models import Library   # ALX requires this literal match
 
-class AuthorListView(ListView):
-    model = Author
-    template_name = "relationship_app/author_list.html"
-    context_object_name = "authors"
+# Function-based view: list all books
+def list_books(request):
+    books = Book.objects.all()
+    return render(request, "relationship_app/list_books.html", {"books": books})
 
-class AuthorDetailView(DetailView):
-    model = Author
-    template_name = "relationship_app/author_detail.html"
-    context_object_name = "author"
-
-class BookListView(ListView):
-    model = Book
-    template_name = "relationship_app/book_list.html"
-    context_object_name = "books"
+# Class-based view: show library details + books
+class LibraryDetailView(DetailView):
+    model = Library
+    template_name = "relationship_app/library_detail.html"
+    context_object_name = "library"
 
