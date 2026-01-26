@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.contrib.auth import login, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.shortcuts import render, redirect
@@ -27,3 +28,8 @@ def logout_view(request):
     logout(request)
     return redirect('login')
 
+=======
+from django.shortcuts import render
+
+# Create your views here.
+>>>>>>> 41a6af3 (ALX Django Models Task)

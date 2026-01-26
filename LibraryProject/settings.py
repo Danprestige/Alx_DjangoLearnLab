@@ -37,8 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'relationship_app',
     'bookshelf',
+=======
+    'bookshelf',
+    'relationship_app',
+>>>>>>> 41a6af3 (ALX Django Models Task)
 ]
 
 MIDDLEWARE = [
@@ -116,6 +121,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
+<<<<<<< HEAD
 STATIC_URL = '/static/'
 
 # Optional, if you want a static folder in the app
@@ -125,3 +131,6 @@ STATICFILES_DIRS = [
 
 LOGIN_URL = 'login'
 LOGOUT_REDIRECT_URL = 'login'
+=======
+STATIC_URL = 'static/'
+>>>>>>> 41a6af3 (ALX Django Models Task)
