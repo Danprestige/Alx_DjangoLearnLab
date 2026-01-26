@@ -1,4 +1,4 @@
-## ORM Relationships
+## ORM Relationships - relationship_app
 
 This app demonstrates Django ORM relationships:
 
@@ -10,6 +10,5 @@ This app demonstrates Django ORM relationships:
 
 1. Get all books by an author:
 ```python
+from relationship_app.query_samples import books_by_author
 books_by_author("Author Name")
-books_in_library("Library Name")
-librarian_for_library("Library Name")
