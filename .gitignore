@@ -1,12 +1,10 @@
-code .gitignore   # if using VSCode
-
-# Python cache files
+# Python cache
 __pycache__/
 *.pyc
 
 # SQLite database
 db.sqlite3
 
-# Django migrations (optional if you want)
-*/migrations/*.pyc
-*/migrations/__pycache__/
+# VSCode settings (optional)
+.vscode/
+
