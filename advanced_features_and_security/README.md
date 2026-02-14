@@ -1,22 +1,24 @@
-# Permissions and Groups Implementation
+# Advanced Features and Security
 
 ## Custom Permissions
-The Book model defines:
+
+The Book model defines custom permissions:
 - can_view
 - can_create
 - can_edit
 - can_delete
 
-## Groups Created
-- Viewers → can_view
-- Editors → can_view, can_create, can_edit
+## Groups
+
 - Admins → All permissions
+- Editors → can_view, can_create, can_edit
+- Viewers → can_view only
 
-## View Protection
-Views are protected using Django's @permission_required decorator.
+## Setup
 
-Example:
-@permission_required('bookshelf.can_edit', raise_exception=True)
+Run:
+python manage.py makemigrations
+python manage.py migrate
+python manage.py setup_groups
 
-## Testing
-Users were assigned to groups and tested to confirm that permission restrictions work correctly.
+Assign users to groups via admin panel.
