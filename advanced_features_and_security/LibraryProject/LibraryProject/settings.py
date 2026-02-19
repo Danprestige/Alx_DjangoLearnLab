@@ -160,3 +160,78 @@ CONTENT_SECURITY_POLICY = {
         "style-src": ("'self'",),
     }
 }
+
+
+# ==========================================================
+# PRODUCTION SECURITY SETTINGS - HTTPS ENFORCEMENT
+# ==========================================================
+
+# Disable debug mode in production
+DEBUG = False
+
+# Allowed hosts (update with your domain in production)
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
+# ----------------------------------------------------------
+# HTTPS REDIRECTION
+# ----------------------------------------------------------
+
+# Redirect all HTTP requests to HTTPS
+SECURE_SSL_REDIRECT = True
+
+# If the app is behind a reverse proxy (e.g., Nginx),
+# this tells Django to trust the X-Forwarded-Proto header
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+
+# ----------------------------------------------------------
+# HTTP STRICT TRANSPORT SECURITY (HSTS)
+# ----------------------------------------------------------
+
+# Instruct browsers to only access the site via HTTPS for 1 year
+SECURE_HSTS_SECONDS = 31536000  # 1 year in seconds
+
+# Apply HSTS policy to all subdomains
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+# Allow the site to be included in browser preload lists
+SECURE_HSTS_PRELOAD = True
+
+
+# ----------------------------------------------------------
+# SECURE COOKIES
+# ----------------------------------------------------------
+
+# Ensure session cookies are only sent over HTTPS
+SESSION_COOKIE_SECURE = True
+
+# Ensure CSRF cookies are only sent over HTTPS
+CSRF_COOKIE_SECURE = True
+
+
+# ----------------------------------------------------------
+# SECURITY HEADERS
+# ----------------------------------------------------------
+
+# Prevent clickjacking attacks
+X_FRAME_OPTIONS = "DENY"
+
+# Prevent browsers from MIME-sniffing
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# Enable browser XSS filtering protection
+SECURE_BROWSER_XSS_FILTER = True
+
+
+# ----------------------------------------------------------
+# ADDITIONAL RECOMMENDED SECURITY SETTINGS
+# ----------------------------------------------------------
+
+# Prevent session fixation attacks
+SESSION_COOKIE_HTTPONLY = True
+
+# CSRF cookie not accessible via JavaScript
+CSRF_COOKIE_HTTPONLY = True
+
+# Secure referrer policy
+SECURE_REFERRER_POLICY = "same-origin"
