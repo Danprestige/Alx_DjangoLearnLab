@@ -1,9 +1,6 @@
 from django import forms
 
-
-class BookSearchForm(forms.Form):
-    q = forms.CharField(
-        max_length=100,
-        required=False,
-        strip=True
-    )
+class ExampleForm(forms.Form):
+    # Form validation sanitizes input automatically
+    book_title = forms.CharField(max_length=100)
+    author_name = forms.CharField(max_length=100)
